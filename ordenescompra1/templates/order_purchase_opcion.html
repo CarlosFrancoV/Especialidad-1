@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block titulo%}Productos Criticos{% endblock titulo%}
+{% block cuerpo%}
+
+<div class="container mt-4">
+    <h1>Ordenes de compra</h1>
+<div class="d-flex flex-column gap-4 mt-5 w-25">
+    <a class="btn btn-primary" href="{% url 'list_order_purchase_pending' %}">Pendientes</a>
+    <a class="btn btn-primary" href="{% url 'list_order_purchase_sent' %}">Enviadas</a>
+    <a class="btn btn-primary" href="{% url 'list_order_purchase_completed' %}">Finalizadas</a>
+    <a class="btn btn-primary" href="{% url 'list_order_purchase_canceled' %}">Canceladas</a>
+    <a class="btn btn-primary" href="{% url 'list_order_purchase' %}">Todas las ordenes de compra</a>
+</div>
+<a href="{% url 'menu' %}" class="btn btn-outline-secondary mt-4">Volver</a>
+</div>
+
+{% endblock cuerpo%}

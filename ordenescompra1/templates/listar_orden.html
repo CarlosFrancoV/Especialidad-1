@@ -1,0 +1,93 @@
+
+    <header class='mb-5'>
+        <h2 class='h2 medium text-blue'>Estado Pedido</h2>
+        <div class="d-flex flex-column flex-lg-row mt-2">
+            <p class='body--normal text-gray'>
+               
+            </p>
+        </div>
+    </header>
+    <div class="d-flex flex-column flex-lg-row my-5">
+        <div class="my-auto d-flex flex-column flex-lg-row ms-lg-auto">
+            <div class="feedback body--small normal"></div>
+        </div>
+        <form method="post" action="" class='col-12 col-lg-6 input-container-search my-auto me-3'>
+         
+            
+            <input name="search" id="search" type="text" placeholder='Buscar '/>
+            
+                            Fecha Inicio:
+            <input type="date" id="start" name="trip-start"
+            value="2022-01-01"
+            min="2022-01-01" max="2025-12-31"> 
+            Fecha Final:
+            <input type="date" id="start" name="trip-start"
+       value="2022-06-22"
+       min="2022-01-01" max="2022-30-31">
+       
+        <form>       
+
+
+
+    </div>
+    <div class="table-container mt-5">
+        <table class="table table-user" border="2">
+            <thead>
+                <tr>
+                    <th width="10%" scope="col">Nº Pedido</th>
+                    <th width="12%" scope="col">Nombre Proveedor</th>
+                    <th width="10%" scope="col">Estado</th>
+                    <th width="10%" scope="col">Accion</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for proveedor in proveedor %}
+                    <tr>
+                        <td>{{ proveedor.rut }}</td>
+                        <td>{{ proveedor.nombre }}</td>
+                        <td>{{ proveedor.estado }}</td>
+                        <td>
+                            <div style="display: flex; justify-content: space-around;">
+                                <a href="{% url 'edit_order' proveedor.id %}">Editar</a>
+                                <a href="{% url 'delete_order' proveedor.id%}">Eliminar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+        <!-- Paginación 
+           
+                '''<div class="d-flex">
+                    <nav aria-label="Page navigation example" class="ms-auto">
+                        <ul class="pagination pagination-table">
+                            
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ h_list_paginate.previous_page_number}}&search={{search}}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                                </li>                        
+                           
+                                <li class="page-item {% if h_list_paginate.number == i %}active{% endif %}">
+                                    <a class="page-link" href="?page={{ i }}&search={{search}}">{{ i }}</a>
+                                </li>                        
+                    
+                                <li class="page-item ">
+                                    <a class="page-link" href="?page={{ h_list_paginate.next_page_number }}&search={{search}}">&raquo;</a>
+                                </li>
+                            
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">&raquo;</a>
+                                </li>
+                          
+                        </ul>
+                    </nav>
+          
+          
+    </div>
+                                 -->

@@ -1,0 +1,116 @@
+{% extends 'index.html' %}
+{% block titulo%}Nueva orden de compra{% endblock titulo%}
+{% block cuerpo%}
+<div class="card">
+    <div class="card-body container">
+        <header class='mb-4'>
+            <h2 class='h2 medium text-blue'>Crear Orden de compra</h2>
+        </header>
+        <div class="col-md-11">
+            <div class="mb-3">
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                    <form action="." method="post">
+                        {% csrf_token %}
+                        <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Numero del pedido: </label>
+                                {{form.numero_pedido}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Nombre del Proveedor: </label>
+                                {{form.proveedor}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Nombre del Vendedor: </label>
+                                {{form.vendedor}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Nombre del Precio Orden: </label>
+                                {{form.precio_orden}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Cantidad Orden: </label>
+                                {{form.cantidad_orden}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">`Nombre Del Producto: </label>
+                                {{form.producto}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <div class="d-flex justify-content-start m-2 gap-lg-4">
+                                        <button type="submit" class="btn btn-primary btn-flat">Crear</button>
+                                        <a href="{% url 'menu' %}" class="btn btn-outline-secondary">Volver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="d-flex justify-content-start align-content-between">
+    <input type="reset" value="Cancelar" class="btn btn-secondary">
+    <button type="submit" id="btnEnviar" class="btn btn-primary">Crear</button>
+</div>
+
+<div class="col-md-11">
+    <div class="mb-3">
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+            <form method="post" action="{% url 'proveedores_proveedor_save' %}">
+                {% csrf_token %}
+                <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                    <div class="mb-0 col-md-12">
+                        <label for="category_name" class="form-label">Nombre Proveedor</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre Proveedor" required>
+                        <div class="feedback body--small normal"></div>
+                    </div>
+                    <div class="mb-0 col-md-12">
+                        <label for="category_description" class="form-label">Rut </label>
+                        <input type="text" class="form-control" name="rut" id="rut" placeholder="Rut Proveedor" required>
+                        <div class="feedback body--small normal"></div>
+                    </div>
+                    <div class="mb-0 col-md-12">
+                        <label for="category_description" class="form-label">Correo </label>
+                        <input type="text" class="form-control" name="correo" id="correo" placeholder="Correo Proveedor" required>
+                        <div class="feedback body--small normal"></div>
+                    </div>
+                    <div class="mb-0 col-md-12">
+                        <label for="category_description" class="form-label">Teléfono </label>
+                        <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono Proveedor" required>
+                        <div class="feedback body--small normal"></div>
+                    </div>
+                    <div class="mb-0 col-md-12">
+                        <label for="category_description" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion Proveedor" required>
+                        <div class="feedback body--small normal"></div>
+                    <div class="mb-0 col-md-12">
+                        <label for="category_description" class="form-label">Id de vendedor Asociado </label>
+                        <input type="text" class="form-control" name="idvendedor" id="idvendedor" placeholder="id del vendedor" required>
+                        <div class="feedback body--small normal"></div>   
+                    <div class="mb-0 col-md-12">
+                        <div class="d-flex justify-content-center mb-2">
+                            <div class="d-flex justify-content-center mx-0-5--custom">
+                                <button type="submit" class="button">Crear</button>
+                            </div>
+                            <div class="d-flex justify-content-center mx-0-5--custom">
+                                <a href="{% url 'proveedores_main' %}" class="button">Regresa</a>
+                            </div>  
+                        </div>                                  
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+ -->
+{% endblock cuerpo%}
+

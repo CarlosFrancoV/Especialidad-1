@@ -1,0 +1,58 @@
+{% extends 'inicio.html' %}
+{% block titulo%}Crear Vendedor{% endblock titulo%}
+{% block cuerpo%}
+<div class="card">
+    <div class="card-body">
+        <header class='mb-4'>
+            <h2 class='h2 medium text-blue'>Crear Vendedor</h2>
+        </header>
+        <div class="col-md-11">
+            <div class="mb-3">
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                    <form action="." method="post">
+                        {% csrf_token %}
+                        <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Nombre Vendedor: </label>
+                                {{form.nombre_vendedor}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Nombre del Proveedor: </label>
+                                {{form.dato_proveedor}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">RUT Vendedor: </label>
+                                {{form.rut_vendedor}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Telefono Vendedor: </label>
+                                {{form.telefono_vendedor }}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Estado Vendedor: </label>
+                                {{form.estado_vendedor}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Correo Vendedor: </label>
+                                {{form.correo_vendedor}}
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <div class="d-flex justify-content-start m-2 gap-lg-4">
+                                        <button type="submit" class="btn btn-success btn-flat">Crear</button>
+                                        <a href="{% url 'casita' %}" class="btn btn-secondary" >Regresa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock cuerpo%}

@@ -1,0 +1,53 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <header class='mb-5'>
+        <h2 class='h2 medium text-blue'>Gestión de productos</h2>
+        <div class="d-flex flex-column flex-lg-row mt-2">
+            <p class='body--normal text-gray'>
+                {% lorem 2 b random %}
+            </p>
+        </div>
+    </header>
+    <div class="d-flex flex-column flex-lg-row my-5">
+        <div class="my-auto d-flex flex-column flex-lg-row ms-lg-auto">
+            <div class="feedback body--small normal"></div>
+        </div>
+        <form method="post" action="" class='col-12 col-lg-6 input-container-search my-auto me-3'>
+            {% csrf_token %}
+            <center><input name="search" id="search" type="text" placeholder='Ingrese ID'/><center>
+        <form>       
+    </div>
+    <div class="table-container mt-5">
+        <table class="table table-user" border="3" cellspacing="0" width="40%" style="margin: 0 auto;text-align:center;">
+            <thead>
+                <tr>
+                    <th width="10%" scope="col">Producto</th>
+                    <th width="12%" scope="col">SKU</th>
+                    <th width="10%" scope="col">Código de barras</th>
+                    <th width="10%" scope="col">Stock</th>
+                    <th width="10%" scope="col">Precio</th>
+                    <th width="10%" scope="col">Costo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in h_list_paginate %}
+                    <tr>
+                        <td>{{h.nombre}}</td>
+                        <td>{{h.sku}}</td>
+                        <td>{{h.codigo_barras}}</td>
+                        <td>{{h.stock_producto}}</td>
+                        <td>{{h.precio_producto}}</td>
+                        <td>{{h.costo_producto}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+    <a href="{% url 'main_productos' %}"><input type="button" value="Regresar"></a>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <header class='mb-4'>
+        <h2 class='h2 medium text-blue'>Editar Producto</h2>
+    </header>
+    <div class="col-md-11">
+        <div class="mb-3">
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+                <form method="post" action="{% url 'producto_edit' %}">
+                    {% csrf_token %}
+                    <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label">ID Producto</label>
+                            <input type="text" class="form-control" name="id" id="id" placeholder="ID Producto" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Nombre Producto</label>
+                            <input type="text" class="form-control" name="nombre_producto" id="nombre_producto" placeholder="Nombre Producto" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Precio</label>
+                            <input type="text" class="form-control" name="precio_producto" id="precio_producto" placeholder="Precio producto" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Costo</label>
+                            <input type="text" class="form-control" name="costo_producto" id="costo_producto" placeholder="Costo" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Stock</label>
+                            <input type="text" class="form-control" name="stock_producto" id="stock_producto" placeholder="Stock" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <div class="d-flex justify-content-center mb-2">
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <button type="submit" class="button">Editar</button>
+                                </div>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <a href="{% url 'main_productos' %}"><input type="button" value="Regresar"></a>
+                                </div>  
+                            </div>                                  
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

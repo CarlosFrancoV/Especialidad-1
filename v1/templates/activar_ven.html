@@ -1,0 +1,12 @@
+{% extends 'inicio.html' %}
+{% block titulo%}Mensaje confirmacion{% endblock titulo%}
+{% block cuerpo%}
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <p><strong>¿Esta seguro que desea ACTIVAR vendedor "{{object.nombre_vendedor}}"?</strong></p>
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a href="{% url 'vendedoract_list' %}" class="btn btn-info">Volver</a>
+    </form>
+</div>
+{% endblock cuerpo%}

@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block titulo%}Nueva orden de compra{% endblock titulo%}
+{% block cuerpo%}
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <p><strong>¿Esta seguro que desea Finalizar la orden de compra {{object.numero_pedido}}</strong></p>
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a href="{% url 'list_order_purchase_sent' %}" class="btn btn-info">Volver</a>
+    </form>
+</div>
+{% endblock cuerpo%}
+

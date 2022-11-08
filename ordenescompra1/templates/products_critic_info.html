@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block titulo%}Nueva orden de compra{% endblock titulo%}
+{% block cuerpo%}
+<div class="card">
+    <div class="card-body container">
+        <header class='mb-4'>
+            <h2 class='h2 medium text-blue'>Verificar Orden de compra</h2>
+        </header>
+        <div class="col-md-11">
+            <div class="mb-3">
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                    <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Nombre Producto: </b></label>
+                           <h3>{{object.nombre_producto}}</h3>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Sku: </b></label>
+                            {{object.sku_producto}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Codigo Barras: </b></label>
+                            {{object.codigo_barras_producto}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Precio: </b></label>
+                            {{object.precio_producto}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Costo: </b></label>
+                            {{object.costo_producto}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Stock Producto: </b></label>
+                            {{object.stock_producto}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Stock Critico: </b></label>
+                            {{object.stock_promedio }}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Fecha de creacion: </b></label>
+                            {{object.created }}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Estado: </b></label>
+                            {{object.state }}
+                        </div>
+                    </div>
+                    <a href="{% url 'list_products_critic' %}" class="btn btn-outline-secondary mt-4">Volver</a>
+                </div>
+            </div>
+        </div>
+
+{% endblock cuerpo%}
+

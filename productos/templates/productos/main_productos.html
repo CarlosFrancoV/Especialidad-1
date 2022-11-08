@@ -1,0 +1,69 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <div class="col-md-11">
+        <div class="mb-3">
+            <header class='mb-4'>
+                <h2 class='h2 medium text-blue'>Bodega Grupo 1 - Productos</h2>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card bg-skin" style="width: auto;">
+                            <div class="card-body">
+                                <h5 class="card-title">Productos</h5>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <p class="card-text">{% lorem 1 b random %}</p>
+                                </div>
+                                <div>
+                                    <a href="{% url 'list_productos' %}"><input type="button" value="Listado de productos"></a>
+                                    </a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    </a>         
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'list_productos_activos' %}"><input type="button" value="Listado de productos activos"></a>
+                                    </a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'list_productos_bloqueados' %}"><input type="button" value="Listado de productos bloqueados"></a>
+                                    </a>
+                                    <a href="{% url 'producto_add' %}"><input type="button" value="Nuevo producto"></a>
+                                    </a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'edit_producto' %}"><input type="button" value="Editar producto"></a>
+                                    </a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'producto_fecha' %}"><input type="button" value="Buscar producto por fecha"></a>
+                                    </a>         
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'producto_ver' %}"><input type="button" value="Ver información producto"></a>
+                                    </a>                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                    <div class="col-sm-4">
+                        <div class="card bg-skin" style="width: auto;">
+                            <div class="card-body">
+                                <h5 class="card-title">Productos</h5>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <p class="card-text">{% lorem 1 b random %}</p>
+                                </div>
+                                <div class="d-flex justify-content-center mx-0-5--custom mt-2">
+                                    <a href="" class="text-dark" title="Administrar productos">
+                                        <span class="material-icons-outlined">
+                                            <a href="{% url 'login' %}"><input type="button" value="Cerrar Sesión"></a>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>             
+                </div>
+            </div>            
+        </div>
+    </div>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

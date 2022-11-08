@@ -1,0 +1,77 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <header class='mb-4'>
+        <h2 class='h2 medium text-blue'>Nuevo Producto</h2>
+    </header>
+    <div class="col-md-11">
+        <div class="mb-3">
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+                <form method="post" action="{% url 'edit_producto' %}">
+                    {% csrf_token %}
+                    <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label">Nombre Producto</label>
+                            <input type="text" class="form-control" name="nombre_producto" id="nombre_producto" placeholder="Nombre Producto" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label">Categoria Producto</label>
+                            <input type="text" class="form-control" name="categoria_producto" id="categoria_producto" placeholder="Categoría Producto" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">SKU</label>
+                            <input type="text" class="form-control" name="sku_producto" id="sku_producto" placeholder="SKU" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Código de barras</label>
+                            <input type="text" class="form-control" name="codigo_barras_producto" id="codigo_barras_producto" placeholder="Código de barras" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Precio</label>
+                            <input type="text" class="form-control" name="precio_producto" id="precio_producto" placeholder="Precio producto" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Costo</label>
+                            <input type="text" class="form-control" name="costo_producto" id="costo_producto" placeholder="Costo" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Stock</label>
+                            <input type="text" class="form-control" name="stock_producto" id="stock_producto" placeholder="Stock" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_description" class="form-label">Stock promedio</label>
+                            <input type="text" class="form-control" name="stock_promedio" id="stock_promedio" placeholder="Stock promedio" required>
+                            <div class="feedback body--small normal"></div>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <div class="d-flex justify-content-center mb-2">
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+<<<<<<< HEAD
+                                    <button type="submit" class="button">Guardar</button>
+=======
+                                    <button type="submit" class="button">Crear</button>
+>>>>>>> 4315df7995a87604583236d224bca361721dcd3d
+                                </div>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <a href="{% url 'main_productos' %}"><input type="button" value="Regresar"></a>
+                                </div>  
+                            </div>                                  
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

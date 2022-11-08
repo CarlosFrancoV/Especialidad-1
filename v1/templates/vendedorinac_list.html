@@ -1,0 +1,31 @@
+{% extends 'inicio.html' %}
+{% block titulo%}Vendedores inactivos{% endblock titulo%}
+{% block cuerpo%}
+<div class="table-container mt-5">
+    <h2>Vendedores Inactivos</h2>
+    <table class="table table-user" >
+        <thead class="table-success">
+            <tr>
+                <th width="10%" scope="col">Nombre Proveedor</th>
+                <th width="10%" scope="col">Nombre Vendedor</th>
+                <th width="12%" scope="col">Rut</th>
+                <th width="10%" scope="col">Telefono</th>
+                <th width="10%" scope="col">Estado</th>
+                <th width="10%" scope="col">Acción</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for Vend in object_list %}
+                <tr>
+                    <td>{{ Vend.dato_proveedor }}</td>
+                    <td>{{ Vend.nombre_vendedor }}</td>
+                    <td>{{ Vend.rut_vendedor }}</td>
+                    <td>{{ Vend.telefono_vendedor }}</td>
+                    <td>{{ Vend.estado_vendedor }}</td>
+                    <td><a href="{% url 'activar_ven' Vend.id %}" class="btn btn-success">Activar</a></td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+{% endblock cuerpo%}

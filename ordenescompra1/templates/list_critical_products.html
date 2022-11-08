@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block titulo%}Productos Criticos{% endblock titulo%}
+{% block cuerpo%}
+<div class="container">
+    <div class="table-container mt-5">
+        <h2>Productos Criticos</h2>
+        <table class="table table-user" border="2">
+            <thead class="table-danger">
+                <tr>
+                    <th width="10%" scope="col">Nombre del producto</th>
+                    <th width="10%" scope="col">Sku</th>
+                    <th width="12%" scope="col">Stock Actual</th>
+                    <th width="10%" scope="col">Stock Critico</th>
+                    <th width="10%" scope="col">Orden De Compra</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in object_list %}
+                    <tr>
+                        <td>{{ producto.nombre_producto }}</td>
+                        <td>{{ producto.sku_producto }}</td>
+                        <td>{{ producto.stock_producto }}</td>
+                        <td>{{ producto.stock_promedio }}</td>
+                        <td><div class="d-flex justify-content-center">
+                            <a href="{% url 'products_critic_info' producto.id %}" class="btn btn-outline-primary">Ver Info</a>
+                        </div></td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'menu' %}" class="btn btn-outline-secondary">Volver</a>
+</div>
+
+{% endblock cuerpo%}

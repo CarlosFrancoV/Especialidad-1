@@ -1,0 +1,89 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <header class='mb-5'>
+        <h2 class='h2 medium text-blue'>Gestión de productos</h2>
+        <div class="d-flex flex-column flex-lg-row mt-2">
+            <p class='body--normal text-gray'>
+                {% lorem 2 b random %}
+            </p>
+        </div>
+    </header>
+    <div class="d-flex flex-column flex-lg-row my-5">
+        <div class="my-auto d-flex flex-column flex-lg-row ms-lg-auto">
+            <div class="feedback body--small normal"></div>
+        </div>
+        <form method="post" action="" class='col-12 col-lg-6 input-container-search my-auto me-3'>
+            {% csrf_token %}
+            <center><input name="search" id="search" type="text" placeholder='Buscar por nombre'/><center>
+        <form>       
+    </div>
+    <div class="table-container mt-5">
+        <table class="table table-user" border="3" cellspacing="0" width="40%" style="margin: 0 auto;text-align:center;">
+            <thead>
+                <tr>
+                    <th width="10%" scope="col">Producto</th>
+                    <th width="12%" scope="col">SKU</th>
+                    <th width="10%" scope="col">Código de barras</th>
+                    <th width="10%" scope="col">Stock</th>
+                    <th width="10%" scope="col">Precio</th>
+                    <th width="10%" scope="col">Costo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in h_list_paginate %}
+                    <tr>
+                        <td>{{h.nombre}}</td>
+                        <td>{{h.sku}}</td>
+                        <td>{{h.codigo_barras}}</td>
+                        <td>{{h.stock_producto}}</td>
+                        <td>{{h.precio_producto}}</td>
+                        <td>{{h.costo_producto}}</td>
+                        <td><a href="{% url 'producto_ver' %}"><input type="button" value="Ver"></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- Paginación -->
+            {% if paginator.num_pages > 1 %}
+                <div class="d-flex">
+                    <nav aria-label="Page navigation example" class="ms-auto">
+                        <ul class="pagination pagination-table">
+                            {% if h_list_paginate.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ h_list_paginate.previous_page_number}}&search={{search}}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                                </li>                        
+                            {% endif %}
+                            {% for i in paginator.page_range %}
+                                <li class="page-item {% if h_list_paginate.number == i %}active{% endif %}">
+                                    <a class="page-link" href="?page={{ i }}&search={{search}}">{{ i }}</a>
+                                </li>                        
+                            {% endfor %}
+                            {% if h_list_paginate.has_next %}
+                                <li class="page-item ">
+                                    <a class="page-link" href="?page={{ h_list_paginate.next_page_number }}&search={{search}}">&raquo;</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">&raquo;</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            {% endif %}  
+        <!-- Paginación -->    
+    </div>
+    <a href="{% url 'main_productos' %}"><input type="button" value="Regresar"></a>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

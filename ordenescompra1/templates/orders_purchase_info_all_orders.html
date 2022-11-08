@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block titulo%}Nueva orden de compra{% endblock titulo%}
+{% block cuerpo%}
+<div class="card">
+    <div class="card-body container">
+        <header class='mb-4'>
+            <h2 class='h2 medium text-blue'>Verificar Orden de compra</h2>
+        </header>
+        <div class="col-md-11">
+            <div class="mb-3">
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                    <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Numero de pedido: </b></label>
+                           <h3>{{object.numero_pedido}}</h3>
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Precio de la Orden: </b></label>
+                            {{object.precio_orden}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Cantidad de la Orden: </b></label>
+                            {{object.cantidad_orden}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Proveedor: </b></label>
+                            {{object.proveedor}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Vendedor: </b></label>
+                            {{object.vendedor}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Producto: </b></label>
+                            {{object.producto}}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Creado: </b></label>
+                            {{object.created }}
+                        </div>
+                        <div class="mb-0 col-md-12">
+                            <label for="category_name" class="form-label"><b>Estado del pedido: </b></label>
+                            {{object.estado_pedido }}
+                        </div>
+                    </div>
+                    <a href="{% url 'list_order_purchase' %}" class="btn btn-outline-secondary mt-4">Volver</a>
+                </div>
+            </div>
+        </div>
+
+{% endblock cuerpo%}
+

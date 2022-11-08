@@ -1,2 +1,1 @@
-# Especialidad-1
-Gestion de proveedores y Vendedores 
+# bussiness_solutions
