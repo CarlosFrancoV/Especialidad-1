@@ -1,0 +1,53 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <div class="col-md-11">
+        <div class="mb-3">
+            <header class='mb-4'>
+                <h2 class='h2 medium text-blue'>Bodega Grupo 1 - Categorías</h2>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card bg-skin" style="width: auto;">
+                            <div class="card-body">
+                                <h5 class="card-title">Categorías</h5>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <p class="card-text">{% lorem 1 b random %}</p>
+                                </div>
+                                <div class="d-flex justify-content-center mx-0-5--custom mt-2">
+                                    <a href="{% url 'list_categorias' %}"><input type="button" value="Listado de categorías"></a>
+                                    </a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'categorias_add' %}"><input type="button" value="Crear categoría"></a>
+                                    </a>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                    <div class="col-sm-4">
+                        <div class="card bg-skin" style="width: auto;">
+                            <div class="card-body">
+                                <h5 class="card-title">Categorías</h5>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <p class="card-text">{% lorem 1 b random %}</p>
+                                </div>
+                                <div class="d-flex justify-content-center mx-0-5--custom mt-2">
+                                    <a href="" class="text-dark" title="Administrar categorías">
+                                        <span class="material-icons-outlined">
+                                            <a href="{% url 'login' %}"><input type="button" value="Cerrar Sesión"></a>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>             
+                </div>
+            </div>            
+        </div>
+    </div>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

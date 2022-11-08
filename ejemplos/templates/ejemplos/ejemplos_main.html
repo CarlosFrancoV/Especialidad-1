@@ -1,0 +1,64 @@
+
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <div class="col-md-11">
+        <div class="mb-3">
+            <header class='mb-4'>
+                <h2 class='h2 medium text-blue'>Módulo Ejemplo</h2>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card bg-skin" style="width: auto;">
+                            <div class="card-body">
+                                <h5 class="card-title">Proveedores</h5>
+                                <div>
+                                    <p class="card-text"> Hacia menu de proveedores</p>
+                                    <a style="border: none; background-color: royalblue;color: aliceblue;cursor: pointer;padding: 10px 16px;" href="{% url 'proveedores_main' %}" class="btn" >
+                                        Proveedores Main
+                                    </a>
+                                </div>
+                                <h5 class="card-title">Habilidades</h5>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <p class="card-text">{% lorem 1 b random %}</p>
+                                </div>
+                                <div class="d-flex justify-content-center mx-0-5--custom mt-2">
+                                    <a href="{% url 'ejemplos_list_habilidades' %}" class="btn" >
+                                        Listado
+                                    </a>
+                                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'ejemplos_habilidad_add' %}" class="btn" >
+                                        Nuevo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                        
+                    <div class="col-sm-4">
+                        <div class="card bg-skin" style="width: auto;">
+                            <div class="card-body">
+                                <h5 class="card-title">Heroes</h5>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <p class="card-text">{% lorem 1 b random %}</p>
+                                </div>
+                                <div class="d-flex justify-content-center mx-0-5--custom mt-2">
+                                    <a href="" class="text-dark" title="Administrar categorías">
+                                        <span class="material-icons-outlined">
+                                            Ingresar
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>             
+                </div>
+            </div>            
+        </div>
+    </div>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}
